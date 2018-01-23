@@ -1,0 +1,178 @@
+body{
+    margin: 0 auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    /* text-align: center; */
+    
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    /* For now  */
+    /* min-height: 50px; */
+    height: 16vh; 
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+
+}
+
+header>h2{
+    font-size: 5vh; 
+    color: white;
+    grid-column: 2/5;
+    grid-row: 1/4;
+    justify-self: left;
+
+}
+
+#sub-logo{
+    grid-column: 1/2;
+    
+    grid-row: 1/4;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+
+}
+
+#main-page-logo{
+    grid-column: 2/4;
+    
+    grid-row: 1/4;
+    height: 100%;
+    /* background-color: green; */
+    /* */
+    align-self: center;
+    justify-self: center;
+}
+
+#main-menu{
+    /* maximumheigth and width */
+    width: 100%;
+    height: 84vh;
+
+}
+
+#main-menu-elements{
+    padding: 0;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "eps1 eps2"
+                        "eps3 eps4";
+    /* background-color: bisque; */
+    justify-items: center;
+    align-items: center;
+
+}
+
+.nav-episode{
+    list-style-type: none;
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    
+
+    
+}
+.nav-episode a{
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    text-align: center;
+    /* background-color: green; */
+}
+
+.ep1, .ep2, .ep3, .ep4{
+    text-decoration: none;
+}
+.ep1{
+    overflow: hidden;
+    position: relative;
+    
+    grid-area: eps1;
+}
+.ep1::before{
+    background: url("bmep1.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    background-clip: content-box;
+    transform-origin: right;
+
+}
+.ep1::before, .ep2::before, .ep3::before, .ep4::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    transform: scale(1.1);
+    
+    transition: all 300ms ease-out;
+}
+.ep1:hover::before,.ep2:hover::before,.ep3:hover::before,.ep4:hover::before{
+    transform: scale(1.3)  ;
+
+}
+.ep1:active::before,.ep2:active::before,.ep3:active::before,.ep4:active::before{
+    
+    opacity: 1; 
+    /* add something */
+
+}
+.ep2{
+    overflow: hidden;
+    position: relative;
+    grid-area: eps2;
+    
+}
+.ep2::before{
+    background: url("bmep2.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    background-clip: content-box;
+    transform-origin: left;
+
+}
+
+.ep3{
+    overflow: hidden;
+    position: relative;
+    grid-area: eps3;
+    
+}
+.ep3::before{
+    background: url("bmep3.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    background-clip: content-box;
+    transform-origin: top center;
+
+}
+.ep4{
+    overflow: hidden;
+    position: relative;
+    grid-area: eps4;
+    
+    
+}
+.ep4::before{
+    background: url("bmep4.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    background-clip: content-box;
+    transform-origin: top center;
+
+}
+.current-episode{
+    opacity: 0.5;
+    
+}
+
+.container{
+    width: 80%;
+    margin:auto;
+}
