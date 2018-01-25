@@ -1,47 +1,54 @@
-body{
-    margin: 0 auto;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+@font-face{
+    font-family: "Helvetica Neue";
+    src: url("HelveticaNeue-Thin.otf");
 }
 
-header{
+body {
+    margin: 0 auto;
+    font-family: "Helvetica Neue"
+    /* font-family: "Computer Modern Sans", Geneva, Verdana, sans-serif; */
+}
+
+header {
     /* text-align: center; */
-    
     background-color: rgb(0, 0, 0);
     width: 100%;
     /* For now  */
     /* min-height: 50px; */
-    height: 16vh; 
+    height: 16vh;
     display: grid;
     align-items: center;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-
-
 }
 
-header>h2{
-    font-size: 5vh; 
+header h2 {
+    font-size: 3vw;
     color: white;
     grid-column: 2/5;
     grid-row: 1/4;
     justify-self: left;
-
 }
 
-#sub-logo{
+#sub-logo {
     grid-column: 1/2;
-    
     grid-row: 1/4;
     height: 100%;
     align-self: center;
     justify-self: center;
-
 }
 
-#main-page-logo{
+header a{
+    display: block;
+    grid-column: 1/2;
+    grid-row: 1/4;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+#main-page-logo {
     grid-column: 2/4;
-    
     grid-row: 1/4;
     height: 100%;
     /* background-color: green; */
@@ -50,14 +57,13 @@ header>h2{
     justify-self: center;
 }
 
-#main-menu{
+#main-menu {
     /* maximumheigth and width */
     width: 100%;
     height: 84vh;
-
 }
 
-#main-menu-elements{
+#main-menu-elements {
     padding: 0;
     margin: 0px;
     width: 100%;
@@ -65,114 +71,172 @@ header>h2{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "eps1 eps2"
-                        "eps3 eps4";
+    grid-template-areas: "eps1 eps2" "eps3 eps4";
     /* background-color: bisque; */
     justify-items: center;
     align-items: center;
-
 }
 
-.nav-episode{
+.nav-episode {
     list-style-type: none;
     /* background-color: aqua; */
     width: 100%;
     height: 100%;
-    
-
-    
+   
 }
-.nav-episode a{
+
+.nav-episode a {
     text-decoration: none;
     display: block;
-    height: 100%;
+    font-size:calc(1.5vw);
+    color: white;
+    top: 50%;
+    text-transform: uppercase;
+    text-shadow:0px 2px 1px blue;
+    /* left: 50%; */
+    position: relative;
     text-align: center;
+    letter-spacing: 1em;
+    /* transform: translate(0%,50%); */
     /* background-color: green; */
 }
+/* nav a;after is a reflection */
+.nav-episode a:before {
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 1px;
+    border-radius: 20px;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 600ms ease-in-out 0s;
+}
 
-.ep1, .ep2, .ep3, .ep4{
+
+/* .nav-episode a:hover::before { */
+
+li.nav-episode.ep1:hover a::before,
+li.nav-episode.ep2:hover a::before,
+li.nav-episode.ep3:hover a::before,
+li.nav-episode.ep4:hover a::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.ep1,
+.ep2,
+.ep3,
+.ep4 {
     text-decoration: none;
 }
-.ep1{
+
+.ep1 {
     overflow: hidden;
     position: relative;
-    
     grid-area: eps1;
 }
-.ep1::before{
+
+.ep1::before {
     background: url("bmep1.jpg") no-repeat 50% 50%;
     background-size: cover;
     background-clip: content-box;
     transform-origin: right;
-
 }
-.ep1::before, .ep2::before, .ep3::before, .ep4::before{
+
+.ep1::before,
+.ep2::before,
+.ep3::before,
+.ep4::before {
     content: "";
     position: absolute;
     width: 100%;
     z-index: -1;
     height: 100%;
     transform: scale(1.1);
-    
-    transition: all 300ms ease-out;
+    transition: all 600ms ease-out;
 }
-.ep1:hover::before,.ep2:hover::before,.ep3:hover::before,.ep4:hover::before{
-    transform: scale(1.3)  ;
 
+.ep1:hover::before,
+.ep2:hover::before,
+.ep3:hover::before,
+.ep4:hover::before {
+    transform: scale(1.3);
 }
-.ep1:active::before,.ep2:active::before,.ep3:active::before,.ep4:active::before{
-    
-    opacity: 1; 
+
+.ep1:active::before,
+.ep2:active::before,
+.ep3:active::before,
+.ep4:active::before {
+    opacity: 1;
     /* add something */
-
 }
-.ep2{
+
+.ep2 {
     overflow: hidden;
     position: relative;
     grid-area: eps2;
-    
 }
-.ep2::before{
+
+.ep2::before {
     background: url("bmep2.jpg") no-repeat 50% 50%;
     background-size: cover;
     background-clip: content-box;
     transform-origin: left;
-
 }
 
-.ep3{
+.ep3 {
     overflow: hidden;
     position: relative;
     grid-area: eps3;
-    
 }
-.ep3::before{
+
+.ep3::before {
     background: url("bmep3.jpg") no-repeat 50% 50%;
     background-size: cover;
     background-clip: content-box;
     transform-origin: top center;
-
 }
-.ep4{
+
+.ep4 {
     overflow: hidden;
     position: relative;
     grid-area: eps4;
-    
-    
 }
-.ep4::before{
+
+.ep4::before {
     background: url("bmep4.jpg") no-repeat 50% 50%;
     background-size: cover;
     background-clip: content-box;
     transform-origin: top center;
-
 }
-.current-episode{
+
+.current-episode {
     opacity: 0.5;
-    
 }
 
-.container{
+.container {
     width: 80%;
-    margin:auto;
+    margin: auto;
+}
+
+footer{
+    position: relative;
+    height: 10vh;
+    bottom: 0px;
+    width: 100%;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    place-items:center;
+}
+
+footer p{
+    grid-row: 1/2;
+    grid-column: 1/4;
+    color: whitesmoke;
+    
 }
