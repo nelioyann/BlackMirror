@@ -191,7 +191,7 @@ li.nav-episode.ep4:hover a::before {
 
 .ep3:hover::before {
     transform: scale(1.3);
-    background-image: url("bmep3-2.png");
+    background-image: url("bmep3-2.jpg");
 }
 
 .ep4:hover::before {
@@ -227,7 +227,7 @@ li.nav-episode.ep4:hover a::before {
 }
 
 .ep3::before {
-    background: url("bmep3-2.jpg") no-repeat 50% 50%;
+    background: url("bmep3-2.png") no-repeat 50% 50%;
     background-size: cover;
     background-clip: content-box;
     transform-origin: top center;
