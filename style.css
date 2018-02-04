@@ -36,19 +36,19 @@ header {
     grid-template-rows: 1fr 1fr 1fr;
 }
 
-header h2 {
-    font-size: 1rem;
-    color: var(--light);
-    grid-column: 2/5;
-    grid-row: 1/4;
-    justify-self: center;
-}
-
 #sub-logo {
     grid-column: 1/2;
     grid-row: 1/4;
     height: 100%;
     align-self: center;
+    justify-self: center;
+}
+
+header h2 {
+    font-size: 1rem;
+    color: var(--light);
+    grid-column: 2/5;
+    grid-row: 1/4;
     justify-self: center;
 }
 
@@ -160,7 +160,7 @@ li.nav-episode.ep4:hover a::before {
 }
 
 .ep1::before {
-    background: url("bmep1.jpg") no-repeat 50% 50%;
+    background: url("Images/bmep1.jpg") no-repeat 50% 50%;
     background-size: cover;
     background-clip: content-box;
     /* transform-origin: right; */
@@ -180,23 +180,23 @@ li.nav-episode.ep4:hover a::before {
 }
 
 .ep1:hover::before {
-    /* transform: scale(0.9); */
-    background-image: url("bmep1-2.png");
+    transform: scale(1.1);
+    background-image: url("Images/bmep1-2.png");
 }
 
 .ep2:hover::before {
-    transform: scale(1.3);
-    background-image: url("bmep2-2.jpeg");
+    transform: scale(1.1);
+    background-image: url("Images/bmep2-2.jpeg");
 }
 
 .ep3:hover::before {
-    transform: scale(1.3);
-    background-image: url("bmep3-2.jpg");
+    transform: scale(1.1);
+    background-image: url("Images/bmep3-2.jpg");
 }
 
 .ep4:hover::before {
-    transform: scale(1.3);
-    background-image: url("bmep4-2.jpg");
+    transform: scale(1.1);
+    background-image: url("Images/bmep4-2.jpg");
 }
 
 .ep1:active::before,
@@ -214,7 +214,7 @@ li.nav-episode.ep4:hover a::before {
 }
 
 .ep2::before {
-    background: url("bmep2.jpg") no-repeat 50% 50%;
+    background: url("Images/bmep2.jpg") no-repeat 50% 50%;
     background-size: cover;
     background-clip: content-box;
     transform-origin: center;
@@ -227,7 +227,7 @@ li.nav-episode.ep4:hover a::before {
 }
 
 .ep3::before {
-    background: url("bmep3-2.png") no-repeat 50% 50%;
+    background: url("Images/bmep3-2.png") no-repeat 50% 50%;
     background-size: cover;
     background-clip: content-box;
     transform-origin: top center;
@@ -240,7 +240,7 @@ li.nav-episode.ep4:hover a::before {
 }
 
 .ep4::before {
-    background: url("bmep4.jpg") no-repeat 50% 50%;
+    background: url("Images/bmep4.jpg") no-repeat 50% 50%;
     background-size: cover;
     background-clip: content-box;
     transform-origin: top center;
@@ -262,7 +262,7 @@ li.nav-episode.ep4:hover a::before {
 
 .container h1 {
     font-size: 1.5rem;
-    color:var(--black);
+    color: var(--black);
 }
 
 .container p {
@@ -271,6 +271,33 @@ li.nav-episode.ep4:hover a::before {
     color: var(--dark);
 }
 
+.authors{
+    display: grid;
+    width: 100%;
+    
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 5fr;
+    justify-items: center;
+    align-items: center;
+}
+.authors img{
+    width: 80%;
+    height: 200px;  
+    border-radius: 30px;
+    border: 1px solid #222222;
+    
+}
+
+/* .authors img:nth-child(1)::before{
+    content: "Yo";
+    height: 20px;
+    width: 20px;
+    display: block;
+    position: relative;
+    
+    border: 2px solid blue;
+
+} */
 footer {
     position: relative;
     height: 10vh;
@@ -289,6 +316,7 @@ footer p {
     grid-column: 1/4;
     color: whitesmoke;
 }
+
 @media screen and (min-width:150px) {
     .nav-episode a {
         font-size: 0.8rem;
@@ -299,13 +327,18 @@ footer p {
     .container h1 {
         font-size: 1rem;
     }
-    header h2 {
+    header h2,h3 {
         font-size: 0.6rem;
     }
     footer p {
         font-size: 0.5rem;
     }
+    #main-menu {
+        width: 100%;
+        height: 50vh;
+    }
 }
+
 @media screen and (min-width:300px) {
     .nav-episode a {
         font-size: 1rem;
@@ -316,11 +349,15 @@ footer p {
     .container h1 {
         font-size: 1.2rem;
     }
-    header h2{
-        font-size:0.8rem;
+    header h2,h3 {
+        font-size: 0.8rem;
     }
     footer p {
         font-size: 0.6rem;
+    }
+    #main-menu {
+        width: 100%;
+        height: 60vh;
     }
 }
 
@@ -334,11 +371,15 @@ footer p {
     .container h1 {
         font-size: 1.4rem;
     }
-    header h2{
-        font-size:1.3rem;
+    header h2,h3 {
+        font-size: 1.3rem;
     }
     footer p {
         font-size: 0.7rem;
+    }
+    #main-menu {
+        width: 100%;
+        height: 70vh;
     }
 }
 
@@ -352,11 +393,14 @@ footer p {
     .container h1 {
         font-size: 1.6rem;
     }
-    header h2{
-        font-size:1.5rem;
+    header h2,h3 {
+        font-size: 1.5rem;
     }
     footer p {
         font-size: 0.8rem;
     }
-
+    #main-menu {
+        width: 100%;
+        height: 84vh;
+    }
 }
