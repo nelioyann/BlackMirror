@@ -3,11 +3,17 @@
     src: url("HelveticaNeue-Thin.otf");
 }
 
+/* Main colors */
+
 :root {
     --light: #DEE4E7;
     --dark: #37474F;
     --black: #222222;
+    --blue: #0071BC;
+    --bluer: #0067C5;
 }
+
+/* basic font size */
 
 html {
     font-size: 16px;
@@ -176,7 +182,7 @@ li.nav-episode.ep4:hover a::before {
     z-index: -1;
     height: 100%;
     /* transform: scale(1.1); */
-    transition: all 600ms ease-in-out;
+    transition: all 1000ms ease-in-out;
 }
 
 .ep1:hover::before {
@@ -250,9 +256,19 @@ li.nav-episode.ep4:hover a::before {
     opacity: 0.5;
 }
 
+iframe {
+    margin: 20px auto;
+    display: block;
+    padding: 30px;
+    background-color: black;
+    border-radius: 30px;
+    box-shadow:0px 10px 6px var(--black) ;
+}
+
+
 .container {
     width: 80%;
-    margin: 20px auto;
+    margin: 40px auto;
     border-radius: 3px;
     padding: 10px 10px;
     background-color: var(--light);
@@ -262,30 +278,67 @@ li.nav-episode.ep4:hover a::before {
 
 .container h1 {
     font-size: 1.5rem;
+    /* display: block; */
     color: var(--black);
+    /* background-color: var(--blue); */
+}
+
+.container blockquote {
+    font-style: italic;
+    border-left: 5px solid var(--dark);
+    
+    width: 80%;
+    text-align: center;
+    margin: 50px auto;
+    padding: 10px;
+    line-height: 1.5rem;
 }
 
 .container p {
     font-size: 0.8rem;
     line-height: calc(0.8rem*1.5);
+    text-align: center;
     color: var(--dark);
 }
 
-.authors{
+.title {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#casting_grid {
     display: grid;
     width: 100%;
-    
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: 5fr;
-    justify-items: center;
-    align-items: center;
+    margin: 10px auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
 }
-.authors img{
-    width: 80%;
-    height: 200px;  
-    border-radius: 30px;
-    border: 1px solid #222222;
-    
+
+/* Style de chaque image */
+
+.cast {
+    /* display: grid; */
+    /* width: 100%; */
+    grid-column: auto;
+    margin: 10px;
+    align-self: center;
+    /* display: inline-block; */
+}
+
+/* .cast a{
+    display: inline-block;
+} */
+
+.cast h5 {
+    text-align: center;
+}
+
+.cast img {
+    width: 50px;
+    height: 50px;
+    float: left;
+    /* border-radius: 30px;
+    border: 1px solid #222222; */
 }
 
 /* .authors img:nth-child(1)::before{
@@ -298,6 +351,7 @@ li.nav-episode.ep4:hover a::before {
     border: 2px solid blue;
 
 } */
+
 footer {
     position: relative;
     height: 10vh;
@@ -305,6 +359,7 @@ footer {
     width: 100%;
     background-color: grey;
     display: grid;
+    margin-top: 300px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     align-items: center;
@@ -321,13 +376,15 @@ footer p {
     .nav-episode a {
         font-size: 0.8rem;
     }
-    .container p {
+    .container p,
+    blockquote {
         font-size: 0.7rem;
     }
     .container h1 {
         font-size: 1rem;
     }
-    header h2,h3 {
+    header h2,
+    h3 {
         font-size: 0.6rem;
     }
     footer p {
@@ -343,13 +400,15 @@ footer p {
     .nav-episode a {
         font-size: 1rem;
     }
-    .container p {
+    .container p,
+    blockquote {
         font-size: 0.8rem;
     }
     .container h1 {
         font-size: 1.2rem;
     }
-    header h2,h3 {
+    header h2,
+    h3 {
         font-size: 0.8rem;
     }
     footer p {
@@ -365,13 +424,15 @@ footer p {
     .nav-episode a {
         font-size: 1.3rem;
     }
-    .container p {
+    .container p,
+    blockquote {
         font-size: 0.9rem;
     }
     .container h1 {
         font-size: 1.4rem;
     }
-    header h2,h3 {
+    header h2,
+    h3 {
         font-size: 1.3rem;
     }
     footer p {
@@ -387,13 +448,15 @@ footer p {
     .nav-episode a {
         font-size: 1.6rem;
     }
-    .container p {
+    .container p,
+    blockquote {
         font-size: 1rem;
     }
     .container h1 {
         font-size: 1.6rem;
     }
-    header h2,h3 {
+    header h2,
+    h3 {
         font-size: 1.5rem;
     }
     footer p {
