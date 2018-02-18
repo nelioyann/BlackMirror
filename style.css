@@ -260,11 +260,13 @@ iframe {
     margin: 20px auto;
     display: block;
     padding: 30px;
+    width: 560px;
+    height: 315px;
     background-color: black;
     border-radius: 30px;
-    box-shadow:0px 10px 6px var(--black) ;
+    box-shadow: 0px 10px 6px var(--black);
+    transform-origin: center;
 }
-
 
 .container {
     width: 80%;
@@ -286,12 +288,19 @@ iframe {
 .container blockquote {
     font-style: italic;
     border-left: 5px solid var(--dark);
-    
     width: 80%;
     text-align: center;
     margin: 50px auto;
     padding: 10px;
     line-height: 1.5rem;
+}
+
+.container blockquote span {
+    color: var(--black);
+    font-style: normal;
+    font-weight: 700;
+    position: relative;
+    bottom: 0px;
 }
 
 .container p {
@@ -304,6 +313,15 @@ iframe {
 .title {
     text-align: center;
     text-transform: uppercase;
+}
+
+.critics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.critics h3 {
+    text-align: center;
 }
 
 #casting_grid {
@@ -337,8 +355,9 @@ iframe {
     width: 50px;
     height: 50px;
     float: left;
-    /* border-radius: 30px;
-    border: 1px solid #222222; */
+    border-radius: 20% 0%;
+    /* border: 1px solid #222222; */
+    
 }
 
 /* .authors img:nth-child(1)::before{
@@ -370,6 +389,13 @@ footer p {
     grid-row: 1/2;
     grid-column: 1/4;
     color: whitesmoke;
+}
+
+hr {
+    border-bottom: 2px dotted var(--dark);
+    width: 70%;
+    margin: auto;
+    color: transparent;
 }
 
 @media screen and (min-width:150px) {
