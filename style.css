@@ -296,9 +296,10 @@ iframe {
 }
 
 .container blockquote span {
-    color: var(--black);
+    color: black;
     font-style: normal;
-    font-weight: 700;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
     position: relative;
     bottom: 0px;
 }
@@ -402,12 +403,16 @@ hr {
     .nav-episode a {
         font-size: 0.8rem;
     }
-    .container p,
+    .container p, li,
     blockquote {
         font-size: 0.7rem;
     }
     .container h1 {
         font-size: 1rem;
+    }
+    iframe{
+        width: 90px;
+        height: 52px;
     }
     header h2,
     h3 {
@@ -426,9 +431,13 @@ hr {
     .nav-episode a {
         font-size: 1rem;
     }
-    .container p,
+    .container p, li,
     blockquote {
         font-size: 0.8rem;
+    }
+    iframe{
+        width:186px ;
+        height:105px ;
     }
     .container h1 {
         font-size: 1.2rem;
@@ -450,9 +459,13 @@ hr {
     .nav-episode a {
         font-size: 1.3rem;
     }
-    .container p,
+    .container p, li,
     blockquote {
         font-size: 0.9rem;
+    }
+    iframe{
+        width:372px ;
+        height:210px ;
     }
     .container h1 {
         font-size: 1.4rem;
@@ -474,9 +487,13 @@ hr {
     .nav-episode a {
         font-size: 1.6rem;
     }
-    .container p,
+    .container p, li,
     blockquote {
         font-size: 1rem;
+    }
+    iframe{
+        width: 560px;
+        height: 315px;
     }
     .container h1 {
         font-size: 1.6rem;
