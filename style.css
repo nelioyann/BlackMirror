@@ -1,10 +1,9 @@
+/* Importation d'une police tierce */
 @font-face {
     font-family: "Helvetica Neue";
     src: url("HelveticaNeue-Thin.otf");
 }
-
-/* Main colors */
-
+/* Couleurs recurrentes dans la page */
 :root {
     --light: #DEE4E7;
     --dark: #37474F;
@@ -13,7 +12,7 @@
     --bluer: #0067C5;
 }
 
-/* basic font size */
+
 
 html {
     font-size: 16px;
@@ -23,33 +22,29 @@ body {
     margin: 0 auto;
     background-color: var(--dark);
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    /* font-family: normal 15px/1.9em 'Merriweather', Georgia, serif; */
-    /* font-family: "Computer Modern Sans", Geneva, Verdana, sans-serif; */
+
 }
 
-header {
-    /* text-align: center; */
+
+
+
+/* Entete compose du logo et du titre de la page */
+header { 
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     background-color: rgb(0, 0, 0);
     width: 100%;
     /* For now  */
     /* min-height: 50px; */
     height: 16vh;
-    display: grid;
+    /* Affichage sous forme de grille */
+    display: grid; 
     align-items: center;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 }
 
-#sub-logo {
-    grid-column: 1/2;
-    grid-row: 1/4;
-    height: 100%;
-    align-self: center;
-    justify-self: center;
-}
-
+/* Titre de l'episode */
 header h2 {
     font-size: 1rem;
     color: var(--light);
@@ -58,6 +53,7 @@ header h2 {
     justify-self: center;
 }
 
+/* Lien vers la page d'accueil/ Se superpose au logo BM  */
 header a {
     display: block;
     grid-column: 1/2;
@@ -67,6 +63,7 @@ header a {
     z-index: 2;
 }
 
+/* Logo BM de la page d'accueil */
 #main-page-logo {
     grid-column: 2/4;
     grid-row: 1/4;
@@ -77,12 +74,33 @@ header a {
     justify-self: center;
 }
 
+/* Logo Black Mirror/ Mene a la page d'accueil*/
+#sub-logo {
+    grid-column: 1/2;
+    grid-row: 1/4;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+}
+
+/* Liste des episodes de la saison3 */
+#ep_list {
+    text-align: center;
+}
+
+
+
+
+
+
+/* Menu de navigation sous forme de grille  */
 #main-menu {
     /* maximumheigth and width */
     width: 100%;
     height: 84vh;
 }
 
+/* Conteneur des elements du menu sous forme de  Liste */
 #main-menu-elements {
     padding: 0;
     margin: 0px;
@@ -91,47 +109,48 @@ header a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    /* Nomination de chaque case de la grille */
     grid-template-areas: "eps1 eps2" "eps3 eps4";
-    /* background-color: bisque; */
     justify-items: center;
     align-items: center;
 }
 
+/* Element du menu(episode) */
 .nav-episode {
     list-style-type: none;
-    /* background-color: aqua; */
     width: 100%;
     height: 100%;
 }
 
+#season-tres {
+    color: var(--black);
+}
+
+/* Lien des elements du menu */
 .nav-episode a {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     text-decoration: none;
     display: inline-block;
     font-size: 1rem;
     padding: 2px;
-    /* background-color: var(--dark); */
     border-radius: 3px;
     color: var(--light);
-    top: 50%;
     border: 1px solid var(--dark);
-    /* text-transform: uppercase; */
     text-shadow: 0px 2px 1px var(--dark);
+    /* Centrer le lien au centre de l'image */
+    top: 50%;
     left: 50%;
     position: relative;
     text-align: center;
-    /* letter-spacing: 1em; */
     transform: translate(-50%, -50%);
-    /* background-color: green; */
+    
 }
 
-/* nav a;after is a reflection */
-
+/* Sous-ligne du lien/ Invisible de base grace a Scale*/
 .nav-episode a:before {
     content: "";
     position: absolute;
     background-color: var(--light);
-    /* background-image: linear-gradient( to right, var(--light), var(--dark), var(--light)); */
     width: 100%;
     height: 2px;
     border-radius: 20px;
@@ -142,8 +161,7 @@ header a {
     transition: all 600ms ease-in-out 0s;
 }
 
-/* .nav-episode a:hover::before { */
-
+/* Sous-ligne du lien/ Devient visible en hover*/
 li.nav-episode.ep1:hover a::before,
 li.nav-episode.ep2:hover a::before,
 li.nav-episode.ep3:hover a::before,
@@ -152,24 +170,52 @@ li.nav-episode.ep4:hover a::before {
     transform: scaleX(1);
 }
 
-.ep1,
-.ep2,
-.ep3,
-.ep4 {
-    text-decoration: none;
-}
-
+/* Element du menu */
 .ep1 {
     overflow: hidden;
     position: relative;
     grid-area: eps1;
 }
+.ep2 {
+    overflow: hidden;
+    position: relative;
+    grid-area: eps2;
+}
+.ep3 {
+    overflow: hidden;
+    position: relative;
+    grid-area: eps3;
+}
+.ep4 {
+    overflow: hidden;
+    position: relative;
+    grid-area: eps4;
+}
 
+/* Images de chaque elemnt du menu */
 .ep1::before {
     background: url("Images/bmep1.jpg") no-repeat 50% 50%;
     background-size: cover;
     background-clip: content-box;
-    /* transform-origin: right; */
+    transform-origin: center;
+}
+.ep2::before {
+    background: url("Images/bmep2.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    background-clip: content-box;
+    transform-origin: center;
+}
+.ep3::before {
+    background: url("Images/bmep3-2.png") no-repeat 50% 50%;
+    background-size: cover;
+    background-clip: content-box;
+    transform-origin: top center;
+}
+.ep4::before {
+    background: url("Images/bmep4.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    background-clip: content-box;
+    transform-origin: top center;
 }
 
 .ep1::before,
@@ -181,81 +227,105 @@ li.nav-episode.ep4:hover a::before {
     width: 100%;
     z-index: -1;
     height: 100%;
-    /* transform: scale(1.1); */
     transition: all 1000ms ease-in-out;
 }
 
+/* Changement de l'image par hover  */
 .ep1:hover::before {
     transform: scale(1.1);
     background-image: url("Images/bmep1-2.png");
 }
-
 .ep2:hover::before {
     transform: scale(1.1);
     background-image: url("Images/bmep2-2.jpeg");
 }
-
 .ep3:hover::before {
     transform: scale(1.1);
     background-image: url("Images/bmep3-2.jpg");
 }
-
 .ep4:hover::before {
     transform: scale(1.1);
     background-image: url("Images/bmep4-2.jpg");
 }
 
+/* Reduction de l'opacite de l'element si actif */
 .ep1:active::before,
 .ep2:active::before,
 .ep3:active::before,
 .ep4:active::before {
     opacity: 1;
-    /* add something */
-}
-
-.ep2 {
-    overflow: hidden;
-    position: relative;
-    grid-area: eps2;
-}
-
-.ep2::before {
-    background: url("Images/bmep2.jpg") no-repeat 50% 50%;
-    background-size: cover;
-    background-clip: content-box;
-    transform-origin: center;
-}
-
-.ep3 {
-    overflow: hidden;
-    position: relative;
-    grid-area: eps3;
-}
-
-.ep3::before {
-    background: url("Images/bmep3-2.png") no-repeat 50% 50%;
-    background-size: cover;
-    background-clip: content-box;
-    transform-origin: top center;
-}
-
-.ep4 {
-    overflow: hidden;
-    position: relative;
-    grid-area: eps4;
-}
-
-.ep4::before {
-    background: url("Images/bmep4.jpg") no-repeat 50% 50%;
-    background-size: cover;
-    background-clip: content-box;
-    transform-origin: top center;
 }
 
 .current-episode {
     opacity: 0.5;
 }
 
+
+
+
+
+
+/* Partie production */
+.production{
+    background-color: initial;
+}
+/* Grille d'acteurs */
+#casting_grid {
+    display: grid;
+    width: 100%;
+    margin: 10px auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+.cast {
+    grid-column: auto;
+    margin: 10px;
+    align-self: center;
+
+}
+.cast a{
+    text-decoration: none;
+    color: inherit;
+}
+.cast h5 {
+    text-align: center;
+}
+/* Style de chaque image */
+.cast img {
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 20% 0%;
+    
+}
+
+
+
+
+/* Parties critiques */
+.polls{
+    background-color: initial;
+}
+/* Avis de popularite */
+.critics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.critics h3 {
+    text-align: center;
+}
+
+.links a {
+    text-decoration: none;
+    padding: 3px;
+    color: var(--light);
+    border-radius: 3px;
+    text-align: center;
+    background-color: var(--dark);
+}
+
+
+/* Video de trailer/extrait */
 iframe {
     margin: 20px auto;
     display: block;
@@ -268,6 +338,9 @@ iframe {
     transform-origin: center;
 }
 
+
+
+/* Conteneur basique */
 .container {
     width: 80%;
     margin: 40px auto;
@@ -275,16 +348,14 @@ iframe {
     padding: 10px 10px;
     background-color: var(--light);
     box-shadow: 0px 2px 4px var(--black);
-    /* display: block; */
 }
-
+/* Titre de conteneur */
 .container h1 {
     font-size: 1.5rem;
-    /* display: block; */
     color: var(--black);
-    /* background-color: var(--blue); */
+    
 }
-
+/* Citation de conteneur */
 .container blockquote {
     font-style: italic;
     border-left: 5px solid var(--dark);
@@ -294,7 +365,7 @@ iframe {
     padding: 10px;
     line-height: 1.5rem;
 }
-
+/* Auteur de citation dans un conteneur */
 .container blockquote span {
     color: black;
     font-style: normal;
@@ -303,7 +374,7 @@ iframe {
     position: relative;
     bottom: 0px;
 }
-
+/* Paragraphe dans un conteneur */
 .container p {
     font-size: 0.8rem;
     line-height: calc(0.8rem*1.5);
@@ -311,66 +382,16 @@ iframe {
     color: var(--dark);
 }
 
+
+
+
+
+/* Titre de la serie (Black Mirror) */
 .title {
     text-align: center;
     text-transform: uppercase;
 }
 
-.critics {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.critics h3 {
-    text-align: center;
-}
-
-#casting_grid {
-    display: grid;
-    width: 100%;
-    margin: 10px auto;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-}
-
-/* Style de chaque image */
-
-.cast {
-    /* display: grid; */
-    /* width: 100%; */
-    grid-column: auto;
-    margin: 10px;
-    align-self: center;
-    /* display: inline-block; */
-}
-
-/* .cast a{
-    display: inline-block;
-} */
-
-.cast h5 {
-    text-align: center;
-}
-
-.cast img {
-    width: 50px;
-    height: 50px;
-    float: left;
-    border-radius: 20% 0%;
-    /* border: 1px solid #222222; */
-    
-}
-
-/* .authors img:nth-child(1)::before{
-    content: "Yo";
-    height: 20px;
-    width: 20px;
-    display: block;
-    position: relative;
-    
-    border: 2px solid blue;
-
-} */
 
 footer {
     position: relative;
@@ -390,27 +411,35 @@ footer p {
     grid-row: 1/2;
     grid-column: 1/4;
     color: whitesmoke;
+    
 }
 
+footer a{
+    text-decoration: none;
+    color: inherit;
+}
 hr {
     border-bottom: 2px dotted var(--dark);
     width: 70%;
     margin: auto;
+    border-top-width: 0;
     color: transparent;
 }
 
+/* Modification a faire en fonction de la largeur de l'ecran */
 @media screen and (min-width:150px) {
     .nav-episode a {
         font-size: 0.8rem;
     }
-    .container p, li,
+    .container p,
+    li,
     blockquote {
         font-size: 0.7rem;
     }
     .container h1 {
         font-size: 1rem;
     }
-    iframe{
+    iframe {
         width: 90px;
         height: 52px;
     }
@@ -431,13 +460,14 @@ hr {
     .nav-episode a {
         font-size: 1rem;
     }
-    .container p, li,
+    .container p,
+    li,
     blockquote {
         font-size: 0.8rem;
     }
-    iframe{
-        width:186px ;
-        height:105px ;
+    iframe {
+        width: 186px;
+        height: 105px;
     }
     .container h1 {
         font-size: 1.2rem;
@@ -459,13 +489,14 @@ hr {
     .nav-episode a {
         font-size: 1.3rem;
     }
-    .container p, li,
+    .container p,
+    li,
     blockquote {
         font-size: 0.9rem;
     }
-    iframe{
-        width:372px ;
-        height:210px ;
+    iframe {
+        width: 372px;
+        height: 210px;
     }
     .container h1 {
         font-size: 1.4rem;
@@ -487,11 +518,12 @@ hr {
     .nav-episode a {
         font-size: 1.6rem;
     }
-    .container p, li,
+    .container p,
+    li,
     blockquote {
         font-size: 1rem;
     }
-    iframe{
+    iframe {
         width: 560px;
         height: 315px;
     }
