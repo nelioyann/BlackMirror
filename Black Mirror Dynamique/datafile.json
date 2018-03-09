@@ -1,0 +1,127 @@
+{
+    "project": [{
+            "name": "Nana Yannick"
+        },
+        {
+            "name": "Andre Dos Reis Pires"
+        }
+    ],
+
+    "season3": [{
+        "title": "Black Mirror",
+        "synopsis": "D'après Charlie Brooker, chaque épisode a un casting, un décor et une réalité différente, mais ils traitent de la façon dont nous vivons maintenant et de la façon dont nous pourrions vivre dans dix minutes si nous commettions une erreur.",
+        "network": "Netflix",
+        "genre": "",
+        "parution": "October 2016",
+        "episodes": [{
+                "title": "Chute Libre",
+                "synopsis": "Pour une femme obsédée par sa notoriété sur les médias sociaux, se faire inviter à un mariage huppé représente une aubaine inespérée. Mais c'était compter sans le voyage.",
+                "director": "",
+                "writtor": "",
+                "casting": [{
+                    "name": ""
+                }, {
+                    "name": ""
+                }],
+                "critics": [{
+                    "name": "",
+                    "comments": ""
+                }, {
+                    "name": "",
+                    "comments": ""
+                }],
+                "ratings": [{
+                    "from": "",
+                    "stars": ""
+                }, {
+                    "from": "",
+                    "stars": ""
+                }]
+            },
+            {
+                "title": "Playtest",
+                "synopsis": "Un voyageur américain fauché s'engage à tester un nouveau système de jeu révolutionnaire, avant de découvrir que les sensations sont un peu trop réelles.",
+                "director": "",
+                "writtor": "",
+                "casting": [{
+                    "name": ""
+                }, {
+                    "name": ""
+                }],
+                "critics": [{
+                    "name": "",
+                    "comments": ""
+                }, {
+                    "name": "",
+                    "comments": ""
+                }],
+                "ratings": [{
+                    "from": "",
+                    "stars": ""
+                }, {
+                    "from": "",
+                    "stars": ""
+                }]
+            },
+            {
+                "title": "Tuer sans etat d'ame",
+                "synopsis": "Après sa première bataille contre un ennemi insaisissable, un soldat commence à éprouver des sensations inhabituelles et à rencontrer d'étranges problèmes techniques.",
+                "director": "",
+                "writtor": "",
+                "casting": [{
+                    "name": ""
+                }, {
+                    "name": ""
+                }],
+                "critics": [{
+                    "name": "",
+                    "comments": ""
+                }, {
+                    "name": "",
+                    "comments": ""
+                }],
+                "ratings": [{
+                    "from": "",
+                    "stars": ""
+                }, {
+                    "from": "",
+                    "stars": ""
+                }]
+            },
+            {
+                "title": "Haine Virtuelle",
+                "synopsis": "La mort d'une journaliste provocatrice haïe sur les réseaux sociaux conduit une enquêtrice aguerrie et sa stagiaire férue de technologie à une découverte glaçante.",
+                "director": "",
+                "writtor": "",
+                "casting": [{
+                    "name": ""
+                }, {
+                    "name": ""
+                }],
+                "critics": [{
+                    "name": "",
+                    "comments": ""
+                }, {
+                    "name": "",
+                    "comments": ""
+                }],
+                "ratings": [{
+                    "from": "",
+                    "stars": ""
+                }, {
+                    "from": "",
+                    "stars": ""
+                }]
+            }, {
+                "title": "Tais-toi et danse (Shut Up and Dance)"
+            }, {
+                "title": "San Junipero (San Junipero)"
+            }
+        ]
+    }]
+
+
+
+
+
+}
